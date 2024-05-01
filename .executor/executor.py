@@ -3,6 +3,7 @@ from printer import Print
 from json_reader import get_commands_from_json
 from os import path
 from step_logging import run_commands
+from help_print import print_commands
 
 if __name__ == "__main__":
     if not argv[1:]:
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     else:
         arg = argv[1]
         if argv[1].lower() == "help":
-            Print.s("HELPPPPP")
+            print_commands(".cmds")
         elif not argv[1].lower().endswith(".json"): 
             Print.e("Please specify a JSON file.")
         elif not path.isfile(argv[1]):
